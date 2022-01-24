@@ -2,6 +2,15 @@ import "./style.css";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import * as dat from "dat.gui";
+import matCap1 from "/textures/matcaps/1.png";
+import matCap2 from "/textures/matcaps/2.png";
+import matCap3 from "/textures/matcaps/3.png";
+import matCap4 from "/textures/matcaps/4.png";
+import matCap5 from "/textures/matcaps/5.png";
+import matCap6 from "/textures/matcaps/6.png";
+import matCap7 from "/textures/matcaps/7.png";
+import matCap8 from "/textures/matcaps/8.png";
+// import matCap9 from "/fonts/helvetiker_regular.typeface.json";
 
 /**
  * Base
@@ -19,35 +28,32 @@ const scene = new THREE.Scene();
  * Textures
  */
 const textureLoader = new THREE.TextureLoader();
-const matcapTexture = textureLoader.load("/textures/matcaps/3.png");
+const matcapTexture = textureLoader.load(matCap3);
 const matcapTexturesArr = [
-  textureLoader.load("/textures/matcaps/1.png"),
-  textureLoader.load("/textures/matcaps/2.png"),
-  textureLoader.load("/textures/matcaps/3.png"),
-  textureLoader.load("/textures/matcaps/4.png"),
-  textureLoader.load("/textures/matcaps/5.png"),
-  textureLoader.load("/textures/matcaps/6.png"),
-  textureLoader.load("/textures/matcaps/7.png"),
-  textureLoader.load("/textures/matcaps/8.png"),
+  textureLoader.load(matCap1),
+  textureLoader.load(matCap2),
+  textureLoader.load(matCap3),
+  textureLoader.load(matCap4),
+  textureLoader.load(matCap5),
+  textureLoader.load(matCap6),
+  textureLoader.load(matCap7),
+  textureLoader.load(matCap8),
 ];
 
 //fonts
 const fontLoader = new THREE.FontLoader();
 fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
-  const textGeometry = new THREE.TextBufferGeometry(
-    "Sergey, Oleg, Andrey, Gena",
-    {
-      font,
-      size: 0.5,
-      height: 0.2,
-      curveSegments: 5,
-      bevelEnabled: true,
-      bevelThickness: 0.03,
-      bevelSize: 0.02,
-      bevelOffset: 0,
-      bevelSegments: 4,
-    }
-  );
+  const textGeometry = new THREE.TextBufferGeometry("JAVA RUSH", {
+    font,
+    size: 0.5,
+    height: 0.2,
+    curveSegments: 5,
+    bevelEnabled: true,
+    bevelThickness: 0.03,
+    bevelSize: 0.02,
+    bevelOffset: 0,
+    bevelSegments: 4,
+  });
   //   textGeometry.computeBoundingBox();
   //   textGeometry.translate(
   //     -(textGeometry.boundingBox.max.x - 0.02) * 0.5,
